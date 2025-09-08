@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Comparison: Global Data Registries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: The application uses a single-page, multi-section layout. It starts with an introduction, moves to an interactive side-by-side comparison of re3data and FAIRsharing, and concludes with key takeaways. This structure was chosen to guide the user from a high-level overview to detailed, interactive exploration and finally to a practical summary, enhancing comprehension over a static table. Interactivity is provided through filter buttons that allow users to highlight similarities and differences, enabling them to focus on specific aspects of the comparison. -->
+    <!-- Visualization & Content Choices: Report Info: Comparison of re3data vs. FAIRsharing. Goal: Compare & Inform. Viz/Presentation: Interactive two-column card layout using HTML/Tailwind. Interaction: JS-powered filter buttons to highlight similarities/differences and hover effects for emphasis. Justification: A dynamic card layout is more engaging and responsive than a static table. Filtering allows users to customize their view, improving usability. Library/Method: Vanilla JS and Tailwind CSS. CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .comparison-card {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .filter-btn.active {
+            background-color: #1e3a8a;
+            color: white;
+        }
+        .feature-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <h1 class="text-3xl font-bold text-slate-900">Global Registries for Research Data</h1>
+            <p class="text-slate-600 mt-1">An Interactive Comparison for the FAIRagro Community</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-12">
+
+        <section id="intro" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-slate-900">Why Global Registries Matter</h2>
+            <p class="text-slate-700 leading-relaxed max-w-4xl">
+                Making research data repositories visible and discoverable is fundamental to the FAIR principles. Global registries like re3data.org and FAIRsharing.org serve as essential directories, helping researchers, institutions, and automated tools find and identify trusted data sources. This interactive tool explores the distinct roles and shared features of these two key platforms to help the FAIRagro community strategically enhance the visibility of its repositories.
+            </p>
+        </section>
+
+        <section id="interactive-comparison" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-semibold mb-2 text-slate-900">Side-by-Side Comparison</h2>
+                <p class="text-slate-600">Use the filters to highlight similarities and differences.</p>
+                <div id="filter-controls" class="mt-6 flex justify-center gap-2 md:gap-4 flex-wrap">
+                    <button data-filter="all" class="filter-btn active font-medium py-2 px-4 rounded-full transition-colors duration-300 bg-slate-200 text-slate-700 hover:bg-slate-300">Show All</button>
+                    <button data-filter="similar" class="filter-btn font-medium py-2 px-4 rounded-full transition-colors duration-300 bg-slate-200 text-slate-700 hover:bg-slate-300">Highlight Similarities</button>
+                    <button data-filter="different" class="filter-btn font-medium py-2 px-4 rounded-full transition-colors duration-300 bg-slate-200 text-slate-700 hover:bg-slate-300">Highlight Differences</button>
+                </div>
+            </div>
+
+            <div id="comparison-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div id="re3data-col">
+                    <div class="sticky top-8 text-center md:text-left mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold text-blue-800">re3data.org</h3>
+                        <p class="text-slate-600 font-light">Registry of Research Data Repositories</p>
+                    </div>
+                </div>
+                <div id="fairsharing-col">
+                     <div class="sticky top-8 text-center md:text-left mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold text-teal-800">FAIRsharing.org</h3>
+                        <p class="text-slate-600 font-light">Standards, Databases, and Policies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary" class="mt-12">
+             <h2 class="text-2xl font-semibold mb-4 text-slate-900">Key Takeaways for FAIRagro</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2 text-blue-800">When to use re3data.org</h3>
+                    <p class="text-slate-700">Register your repository here to gain broad visibility as a trusted data source. It's the primary, high-level directory for repositories themselves. Getting listed in re3data is a critical first step for discoverability.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2 text-teal-800">When to use FAIRsharing.org</h3>
+                    <p class="text-slate-700">Use FAIRsharing to describe the specific data standards, formats, and policies your repository recommends or uses. This provides deeper, contextual information that promotes interoperability and reuse.</p>
+                </div>
+             </div>
+             <div class="bg-indigo-50 p-6 rounded-lg shadow-inner mt-8">
+                <h3 class="font-semibold text-lg mb-2 text-indigo-900">A Complementary Strategy</h3>
+                <p class="text-indigo-800">For maximum impact, FAIRagro repositories should be present in **both** registries. Use re3data for repository-level visibility and FAIRsharing to detail the standards and policies that make the data within your repository truly FAIR. Together, they create a comprehensive and machine-readable profile of your data ecosystem.</p>
+             </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 mt-12 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>Generated for the FAIRagro Plenary Session</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const comparisonData = [
+                {
+                    feature: 'Primary Focus',
+                    re3data: 'Registry of research data repositories',
+                    fairsharing: 'Registry of standards, databases, and policies',
+                    type: 'different'
+                },
+                {
+                    feature: 'Searchable',
+                    re3data: '✓ Yes',
+                    fairsharing: '✓ Yes',
+                    type: 'similar'
+                },
+                {
+                    feature: 'Scope of Content',
+                    re3data: 'Repositories only',
+                    fairsharing: 'Standards, databases, policies, and their relationships',
+                    type: 'different'
+                },
+                {
+                    feature: 'Discipline Coverage',
+                    re3data: 'All disciplines',
+                    fairsharing: 'All disciplines, with a focus on life sciences and environment',
+                    type: 'different'
+                },
+                 {
+                    feature: 'PID Assignment',
+                    re3data: 'Assigns PIDs to repositories',
+                    fairsharing: 'Assigns PIDs to standards, databases, and policies',
+                    type: 'different'
+                },
+                {
+                    feature: 'Linking & Integration',
+                    re3data: 'Links repositories to PIDs (ROR, ORCID)',
+                    fairsharing: 'Explicitly links standards to databases and vice-versa',
+                    type: 'different'
+                },
+                {
+                    feature: 'Community Endorsement',
+                    re3data: 'Does not explicitly track community endorsement',
+                    fairsharing: 'Tracks and promotes community-endorsed standards',
+                    type: 'different'
+                },
+                {
+                    feature: 'Curation Level',
+                    re3data: 'High level of human curation',
+                    fairsharing: 'High level of human curation',
+                    type: 'similar'
+                },
+                {
+                    feature: 'Promotes Discoverability',
+                    re3data: '✓ Yes',
+                    fairsharing: '✓ Yes',
+                    type: 'similar'
+                }
+            ];
+
+            const re3dataCol = document.getElementById('re3data-col');
+            const fairsharingCol = document.getElementById('fairsharing-col');
+            const filterControls = document.getElementById('filter-controls');
+            let currentFilter = 'all';
+
+            function createCard(title, content, type, isRe3data) {
+                const card = document.createElement('div');
+                card.className = 'comparison-card bg-slate-50 border border-slate-200 p-6 rounded-lg mb-4 hover:shadow-xl hover:-translate-y-1';
+                card.dataset.type = type;
+
+                const borderColor = isRe3data ? 'border-l-4 border-blue-500' : 'border-l-4 border-teal-500';
+                card.classList.add(...borderColor.split(' '));
+
+                const titleEl = document.createElement('h4');
+                titleEl.className = 'font-semibold text-slate-900 mb-2';
+                titleEl.textContent = title;
+
+                const contentEl = document.createElement('p');
+                contentEl.className = 'text-slate-700';
+                contentEl.textContent = content;
+
+                card.appendChild(titleEl);
+                card.appendChild(contentEl);
+                return card;
+            }
+
+            function renderCards() {
+                const re3dataFragment = document.createDocumentFragment();
+                const fairsharingFragment = document.createDocumentFragment();
+
+                comparisonData.forEach(item => {
+                    const re3Card = createCard(item.feature, item.re3data, item.type, true);
+                    const fairCard = createCard(item.feature, item.fairsharing, item.type, false);
+                    re3dataFragment.appendChild(re3Card);
+                    fairsharingFragment.appendChild(fairCard);
+                });
+
+                re3dataCol.appendChild(re3dataFragment);
+                fairsharingCol.appendChild(fairsharingFragment);
+            }
+
+            function applyFilter() {
+                const cards = document.querySelectorAll('.comparison-card');
+                cards.forEach(card => {
+                    const cardType = card.dataset.type;
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+
+                    if (currentFilter === 'all') {
+                        return;
+                    }
+                    if (currentFilter !== cardType) {
+                        card.style.opacity = '0.3';
+                    } else {
+                         card.style.transform = 'scale(1.03)';
+                    }
+                });
+            }
+
+            filterControls.addEventListener('click', function(e) {
+                if (e.target.tagName === 'BUTTON') {
+                    const filterValue = e.target.dataset.filter;
+                    if (currentFilter === filterValue) return;
+
+                    currentFilter = filterValue;
+
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    applyFilter();
+                }
+            });
+
+            renderCards();
+        });
+    </script>
+</body>
+</html>

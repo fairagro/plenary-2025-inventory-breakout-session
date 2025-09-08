@@ -1,0 +1,212 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: A Guide to Global Registries for FAIRagro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="max-w-5xl mx-auto p-4 md:p-8">
+
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#0D47A1] mb-4">Unlocking Visibility</h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">A FAIRagro Guide to Global Research Data Registries: re3data.org & FAIRsharing.org</p>
+        </header>
+
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-[#1976D2] text-center mb-4">Why Do Global Registries Matter?</h2>
+                <p class="text-center leading-relaxed max-w-4xl mx-auto">
+                    To make agricultural research data truly FAIR (Findable, Accessible, Interoperable, Reusable), we need to ensure our data repositories are visible to a global audience. Global registries act as trusted, central directories. They are the essential first step in putting FAIRagro data on the world map, allowing researchers, institutions, and automated tools to discover and connect with our valuable resources. This guide explores the two key platforms that form the foundation of this strategy.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0D47A1] mb-8">At a Glance: A Tale of Two Registries</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center border-t-8 border-[#1976D2]">
+                    <div class="text-6xl mb-4">🏢</div>
+                    <h3 class="text-2xl font-bold text-[#1976D2] mb-2">re3data.org</h3>
+                    <p class="font-semibold text-lg">The "What" and "Where"</p>
+                    <p class="mt-2">Focuses on the **repository** itself: its identity, location, and general scope. It's the global phonebook for data repositories.</p>
+                </div>
+                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center border-t-8 border-[#42A5F5]">
+                    <div class="text-6xl mb-4">📜</div>
+                    <h3 class="text-2xl font-bold text-[#42A5F5] mb-2">FAIRsharing.org</h3>
+                    <p class="font-semibold text-lg">The "How"</p>
+                    <p class="mt-2">Focuses on the **contents and rules**: the standards, formats, and policies used within a repository. It's the instruction manual for the data.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#0D47A1] mb-4">Visualizing Core Functions</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8">
+                While both platforms promote discoverability, their core strengths are distinct. This radar chart visualizes their primary focus across key areas of the data ecosystem.
+            </p>
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="chart-container">
+                    <canvas id="registryRadarChart"></canvas>
+                </div>
+                 <div class="mt-6 text-center text-sm text-slate-500">
+                    <span class="inline-block mx-2"><span class="w-3 h-3 inline-block rounded-full bg-[#003366] mr-1"></span> re3data.org</span>
+                    <span class="inline-block mx-2"><span class="w-3 h-3 inline-block rounded-full bg-[#FF6600] mr-1"></span> FAIRsharing.org</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="my-16">
+             <h2 class="text-3xl font-bold text-center text-[#0D47A1] mb-4">A Complementary Strategy for FAIRagro</h2>
+             <p class="text-center max-w-3xl mx-auto mb-8">
+                The most effective approach is not to choose one, but to leverage both platforms. This simple workflow shows how they work together to maximize the visibility and reusability of your data.
+             </p>
+             <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="flex flex-col items-center">
+                    <div class="bg-slate-100 rounded-lg p-4 shadow w-full md:w-2/3 text-center">
+                        <h3 class="font-bold text-lg text-slate-800">Your FAIRagro Repository</h3>
+                        <p class="text-sm">Contains valuable agricultural datasets.</p>
+                    </div>
+                    <div class="text-4xl my-4 text-slate-400">⬇️</div>
+                    <div class="w-full flex flex-col md:flex-row justify-center gap-8">
+                        <div class="flex-1 text-center">
+                            <div class="bg-[#e3f2fd] border-2 border-dashed border-[#1976D2] rounded-lg p-6">
+                                <h4 class="font-bold text-[#0D47A1] text-lg">Register in re3data.org</h4>
+                                <p class="mt-2 text-slate-700">Achieve broad <span class="font-semibold">discoverability</span>. Get a persistent identifier for your repository and put it on the global map.</p>
+                            </div>
+                        </div>
+                            <!-- <div class="flex items-center justify-center text-4xl text-slate-400 my-4 md:my-0">+</div> -->
+                        <!-- <div class="flex-1 text-center">
+                            <div class="bg-[#e0f7fa] border-2 border-dashed border-[#42A5F5] rounded-lg p-6">
+                                <h4 class="font-bold text-[#006064] text-lg">Step 2: Describe in FAIRsharing.org</h4>
+                                <p class="mt-2 text-slate-700">Detail the specific standards and policies you use to foster <span class="font-semibold">interoperability</span> and reuse.</p>
+                            </div>
+                        </div> -->
+                    </div>
+                     <div class="text-4xl my-4 text-slate-400">⬇️</div>
+                     <div class="bg-green-100 border-2 border-green-600 rounded-lg p-6 shadow w-full md:w-2/3 text-center">
+                        <h3 class="font-bold text-lg text-green-800">Result: Maximum FAIR Impact</h3>
+                        <p class="text-sm text-green-700">Your repository is not only findable but its contents are understandable and reusable by a global audience.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+    </div>
+    
+    <footer class="bg-[#0D47A1] text-white mt-12 py-6">
+        <div class="container mx-auto px-6 text-center text-slate-300">
+            <p>FAIRagro Plenary Session | Improving Repository Visibility</p>
+        </div>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('registryRadarChart');
+
+        const data = {
+            labels: [
+                'Repository Focus',
+                'Standards & Policy Focus',
+                'PID Assignment',
+                'Community Endorsement',
+                'Content Scope',
+                'Cross-Linking'
+            ],
+            datasets: [{
+                label: 're3data.org',
+                data: [10, 2, 8, 3, 7, 6],
+                fill: true,
+                backgroundColor: 'rgba(0, 51, 102, 0.2)',
+                borderColor: '#003366',
+                pointBackgroundColor: '#003366',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#003366'
+            }, {
+                label: 'FAIRsharing.org',
+                data: [3, 10, 7, 9, 8, 9],
+                fill: true,
+                backgroundColor: 'rgba(255, 102, 0, 0.2)',
+                borderColor: '#FF6600',
+                pointBackgroundColor: '#FF6600',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#FF6600'
+            }]
+        };
+
+        new Chart(ctx, {
+            type: 'radar',
+            data: data,
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 13,
+                                weight: '500'
+                            },
+                            color: '#475569'
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',
+                            stepSize: 2
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
