@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAIRagro Plenary Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #334155;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-10">
+
+    <div class="container mx-auto p-6 bg-white rounded-2xl shadow-xl border-t-8 border-[#0D47A1]">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#0D47A1] mb-2">FAIRagro Plenary Presentation</h1>
+            <p class="text-xl md:text-2xl font-medium text-slate-600">Improving the Visibility of Repositories</p>
+        </header>
+
+        <main id="main-content">
+            <div id="home-page">
+                <nav class="space-y-6">
+                    <a href="#global-registries" class="block bg-slate-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <h2 class="text-2xl font-bold text-[#1976D2] mb-1">Global Registries & Comparison</h2>
+                        <p class="text-slate-700">Explore the roles of re3data and FAIRsharing, and a detailed comparison.</p>
+                    </a>
+                    <a href="#pids" class="block bg-slate-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <h2 class="text-2xl font-bold text-[#1976D2] mb-1">Persistent Identifiers (PIDs)</h2>
+                        <p class="text-slate-700">Understand why rich metadata and PIDs like ROR, RAID, and ORCID are crucial.</p>
+                    </a>
+                    <a href="#dssc-list" class="block bg-slate-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <h2 class="text-2xl font-bold text-[#1976D2] mb-1">DSSC Repository List</h2>
+                        <p class="text-slate-700">Learn about the enhanced, tailored list of repositories for FAIRagro.</p>
+                    </a>
+                    <a href="#submission-process" class="block bg-slate-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <h2 class="text-2xl font-bold text-[#1976D2] mb-1">re3data.org Submission Process</h2>
+                        <p class="text-slate-700">A step-by-step guide to submitting a new repository.</p>
+                    </a>
+                    <a href="#submission-requirements" class="block bg-slate-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <h2 class="text-2xl font-bold text-[#1976D2] mb-1">re3data.org Submission Requirements</h2>
+                        <p class="text-slate-700">Detailed overview of the criteria for repository inclusion.</p>
+                    </a>
+                    <a href="#inventory-prototype" class="block bg-slate-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <h2 class="text-2xl font-bold text-[#1976D2] mb-1">FAIRagro Inventory Prototype</h2>
+                        <p class="text-slate-700">A demonstration of the prototype within the FAIRagro Search Hub.</p>
+                    </a>
+                    <a href="#qa" class="block bg-slate-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <h2 class="text-2xl font-bold text-[#1976D2] mb-1">Q&A and Discussion</h2>
+                        <p class="text-slate-700">Interactive session for feedback, community input, and best practices.</p>
+                    </a>
+                </nav>
+            </div>
+            
+            <div id="submission-requirements" class="hidden p-6 bg-white rounded-2xl shadow-xl">
+                <nav class="mb-8">
+                    <a href="#" class="text-[#0D47A1] hover:underline flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        Back to Home
+                    </a>
+                </nav>
+                <header class="text-center mb-8">
+                    <h1 class="text-3xl font-extrabold text-[#0D47A1]">re3data.org Submission Requirements</h1>
+                    <p class="text-slate-600 mt-2">Essential criteria and data fields for a new repository.</p>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944c-3.153 0-6.195 1.144-8.418 3.056L2 8l10 10 10-10-1.618-1.016z" />
+                            </svg>
+                            <h2 class="text-xl font-bold text-gray-800">Minimum Requirements</h2>
+                        </div>
+                        <ul class="text-gray-700 space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 flex-shrink-0">&#10003;</span>
+                                <span>**Focus on Research Data:** Must be dedicated to research data.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 flex-shrink-0">&#10003;</span>
+                                <span>**Legal Entity:** Operated by a sustainable organization (e.g., university).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 flex-shrink-0">&#10003;</span>
+                                <span>**Clear Access Conditions:** Access to repository and data must be clearly explained.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 flex-shrink-0">&#10003;</span>
+                                <span>**Terms of Use:** Must have clearly stated terms of use.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-500 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                            <h2 class="text-xl font-bold text-gray-800">Key Data Fields</h2>
+                        </div>
+                        <ul class="text-gray-700 space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2 flex-shrink-0">&#9679;</span>
+                                <span>**Name & URL:** Official name and web address of the repository.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2 flex-shrink-0">&#9679;</span>
+                                <span>**General Information:** A short description, content types, and keywords.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2 flex-shrink-0">&#9679;</span>
+                                <span>**Responsibilities:** Who is responsible for funding and content.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2 flex-shrink-0">&#9679;</span>
+                                <span>**Policies & Legal:** Repository policies, licenses for the data and database.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2 flex-shrink-0">&#9679;</span>
+                                <span>**Technical Standards:** APIs, dataset versioning, and software used.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2 flex-shrink-0">&#9679;</span>
+                                <span>**Quality Standards:** Any certifications or audit processes.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other pages can be added here -->
+            <div id="submission-process" class="hidden p-6 bg-white rounded-2xl shadow-xl">
+                <nav class="mb-8">
+                    <a href="#" class="text-[#0D47A1] hover:underline flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        Back to Home
+                    </a>
+                </nav>
+                <h1 class="text-3xl font-extrabold text-[#0D47A1] text-center mb-8">re3data.org Submission Process</h1>
+                <p class="text-lg text-slate-700">
+                    The submission process for a new repository to re3data.org is straightforward. It begins with the submitter providing basic information about the repository. This is followed by a review process where the re3data.org team assesses the repository against the minimum requirements. Once approved, the repository is indexed and becomes discoverable on the platform.
+                </p>
+            </div>
+            
+        </main>
+        
+        <footer class="text-center mt-10 text-sm text-slate-500">
+            <p>Presentation developed for the FAIRagro Plenary Breakout Session</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainContent = document.getElementById('main-content');
+            const allPages = mainContent.querySelectorAll('div[id]');
+            
+            function showPage(pageId) {
+                allPages.forEach(page => {
+                    page.classList.add('hidden');
+                });
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                }
+            }
+
+            function handleNavigation() {
+                const hash = window.location.hash.substring(1);
+                if (hash) {
+                    showPage(hash);
+                } else {
+                    showPage('home-page');
+                }
+            }
+            
+            mainContent.addEventListener('click', (event) => {
+                if (event.target.closest('a')) {
+                    const link = event.target.closest('a');
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        event.preventDefault();
+                        window.history.pushState(null, '', href);
+                        handleNavigation();
+                    }
+                }
+            });
+
+            window.addEventListener('popstate', handleNavigation);
+            handleNavigation(); // Initial page load
+        });
+    </script>
+</body>
+</html>
